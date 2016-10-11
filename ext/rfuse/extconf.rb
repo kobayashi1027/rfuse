@@ -4,7 +4,7 @@ $CFLAGS << ' -Wall'
 #$CFLAGS << ' -Werror'
 $CFLAGS << ' -D_FILE_OFFSET_BITS=64'
 $CFLAGS << ' -DFUSE_USE_VERSION=26'
-$CFLAGS << ' -I/usr/local/include/osxfuse' if RUBY_PLATFORM =~ /darwin/
+$CFLAGS << ' -I/opt/local/include/osxfuse' if RUBY_PLATFORM =~ /darwin/
 
 
 have_func("rb_errinfo")

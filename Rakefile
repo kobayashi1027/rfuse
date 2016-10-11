@@ -13,7 +13,7 @@ Rake::ExtensionTask.new('rfuse') do |ext|
   ext.lib_dir = "lib/rfuse"
 
   if RUBY_PLATFORM.include?('darwin')
-    ext.config_options << '--with-cflags="-D_FILE_OFFSET_BITS=64 -D_DARWIN_USE_64_BIT_INODE -I/usr/local/include/osxfuse"'
+    ext.config_options << '--with-cflags="-D_FILE_OFFSET_BITS=64 -D_DARWIN_USE_64_BIT_INODE -I/opt/local/include/osxfuse"'
   end
 end
 
