@@ -1,16 +1,23 @@
 #ifdef linux
 /* For pread()/pwrite() */
 #define _XOPEN_SOURCE 500
-#endif
 //FOR LINUX ONLY
 #include <linux/stat.h> 
 #include <linux/kdev_t.h>
+#include <sys/statfs.h>
+#elif __APPLE__
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/kdebug.h>
+#include <sys/statvfs.h>
+#define MAJOR major
+#define MINOR minor
+#endif
 
 #include <ruby.h>
 #include "ruby-compat.h"
 #include <fuse.h>
 #include <errno.h>
-#include <sys/statfs.h>
 
 #ifdef HAVE_SETXATTR
 #include <sys/xattr.h>
